@@ -1,5 +1,19 @@
-Small script to compare SFrame binary size impact by wrapping size(1)
-and comparing two directories with Linux userland.
+Tool(s) and data to do with SFrame binary size.
+
+## compare-sframe.pl
+
+This is a small Perl script to compare SFrame binary size impact by wrapping
+`size(1)` and comparing two directories containing Linux userland.
+
+It requires the `Class::CSV` module.
+
+Example use:
+```shell
+$ scripts/compare-sframe.pl --baseline=/tmp/baseline --new=/tmp/new --csv=foo.csv --verbose
+```
+
+At least one of `--csv` or `--verbose` is required, otherwise the script
+has nothing useful to do.
 
 ## gentoo.csv
 
