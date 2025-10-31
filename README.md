@@ -15,6 +15,9 @@ $ scripts/compare-sframe.pl --baseline=/tmp/baseline --new=/tmp/new --csv=foo.cs
 At least one of `--csv` or `--verbose` is required, otherwise the script
 has nothing useful to do.
 
+The columns in the generated CSV file are `binary` (path), `total_size`,
+`sframe_size`, `ehframe_size`, and `sframe_ehframe_ratio`.
+
 ## gentoo.csv
 
 I've included `gentoo.csv` which was created with the following environment.
