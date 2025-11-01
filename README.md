@@ -18,9 +18,9 @@ has nothing useful to do.
 The columns in the generated CSV file are `binary` (path), `total_size`,
 `sframe_size`, `ehframe_size`, and `sframe_ehframe_ratio`.
 
-## gentoo.csv
+## gentoo-amd64.csv
 
-I've included `gentoo.csv` which was created with the following environment.
+I've included `gentoo-amd64.csv` which was created with the following environment.
 
 `baseline` and `new` both used the same Gentoo stage3 tarball:
 `stage3-amd64-systemd-20251019T170404Z.tar.xz`.
