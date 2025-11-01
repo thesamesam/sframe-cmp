@@ -87,7 +87,7 @@ sub analyse_binary {
 	}
 
 	my $sfeh_delta = $sf_size - $eh_size;
-	my $sfeh_rat   = sprintf "%0.5f", ($eh_size / $sf_size);
+	my $sfeh_rat   = sprintf "%0.5f", ($sf_size / $eh_size);
 	my $sfeh_pct   = $sfeh_rat * 100;
 
 	my $t_delta    = $results{$file}{'new'}{'total'} - $results{$file}{'baseline'}{'total'};
@@ -104,7 +104,7 @@ sub analyse_binary {
 		printf "\tTotal delta: %s (%s%%)\n", $t_delta, $t_pct;
 		printf "\tSFrame: %s\n", $results{$file}{'new'}{'section'}{'.sframe'};
 		printf "\tEH Frame: %s\n", $eh_size;
-		printf "\tSFrame size / EH Frame size: %s (%s%%) (< 1 means SFrames were larger)\n", $sfeh_rat, $sfeh_pct;
+		printf "\tSFrame size / EH Frame size: %s (%s%%) (> 1 means SFrames were larger)\n", $sfeh_rat, $sfeh_pct;
 	}
 }
 
