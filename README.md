@@ -36,3 +36,22 @@ Repository states:
 * binutils-gdb.git: 157da75362cc082f8f8067155d137dfe98ac230c
 * binutils SFrame patches: https://github.com/thesamesam/overlay/tree/f1490b61932ddf5433611061d6d7a3d9a8fa5699/sys-devel/binutils/files/sframe
 ```
+
+## gentoo-arm64.csv
+
+I've included `gentoo-arm64.csv` which was created with the following environment.
+
+`baseline` and `new` both used the same Gentoo stage3 tarball:
+`stage3-arm64-systemd-20251026T231834Z.tar.xz`.
+
+`sys-devel/binutils` was configured with `EXTRA_ECONF="--disable-default-sframe"`
+for `baseline` and `EXTRA_ECONF="--enable-default-sframe"` for `new`.
+
+Repository states:
+```
+* Head commit of repository gentoo: 50a68cec57787f981e019e26e5c97d6ae8b471bc
+* Head commit of repository sam_c: 5cd1d03a66d549e016d9b0c711efa383d86beec4
+* binutils-patches.git: e0a1bcadfb3cf92271b5d67ffa283a8309a6dd92
+* binutils-gdb.git: 2f53fb60c9c63c47ed65adeda70194f7984dfbba
+* binutils SFrame patches: https://github.com/thesamesam/overlay/tree/f1490b61932ddf5433611061d6d7a3d9a8fa5699/sys-devel/binutils/files/sframe
+```
