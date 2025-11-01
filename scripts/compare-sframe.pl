@@ -44,21 +44,21 @@ sub analyse_binary {
 	print "Processing $file\n" if $VERBOSE;
 
 	# If the
-	if ( ! -f "baseline/$file" || ! -f "new/$file") {
+	if ( ! -f "$BASELINE_PATH/$file" || ! -f "$NEW_PATH/$file") {
 		# This should only happen for binutils which got rebuilt
 		# on the wrong side of midnight in one chroot.
 		print "Skipping $file because missing on one side\n" if $VERBOSE;
 		return;
 	}
 
-	open my $pipe, '-|', 'size', '-A', "baseline/$file", "new/$file" or die "Failed to run size: $!";
+	open my $pipe, '-|', 'size', '-A', "$BASELINE_PATH/$file", "$NEW_PATH/$file" or die "Failed to run size: $!";
 
 	# baseline or new
 	my $type;
 	while (my $line = readline $pipe) {
 		# Header line indicating a new file we're size(1)-ing
-		if ($line =~ /^(baseline|new)/) {
-			$type = $1;
+		if ($line =~ /^($BASELINE_PATH|$NEW_PATH)/) {
+			$type = (split('/', $1))[-1];
 			next;
 		}
 
